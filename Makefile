@@ -23,7 +23,7 @@ rickcompmain.o:
 	${CC} main.c ${CC_FLAGS} -c -o rickcompmain.o -DSAMPLE_RATE=${COMP_SAMPLE_RATE} -DDATA_START=_binary_rickcomp_raw_start -DDATA_END=_binary_rickcomp_raw_end -DCHANNEL_CNT=${COMP_CHANNELS}
 
 rick.raw:
-	ffmpeg -y -i rick.mp3  -acodec pcm_s32le -f s32le -ac 2 -ar ${SAMPLE_RATE} rick.raw
+	ffmpeg -y -i rick.mp3  -acodec pcm_s16le -f s16le -ac 2 -ar ${SAMPLE_RATE} rick.raw
 	
 rickcomp.raw:
 	ffmpeg -y -i rick.mp3  -acodec pcm_s16le -f s16le -ac 1 -ar ${COMP_SAMPLE_RATE} rickcomp.raw
