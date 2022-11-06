@@ -11,7 +11,7 @@ extern const int DATA_START[];
 extern const int DATA_END[];
 
 int main(int argc, char** argv) {
-	snd_pcm_t *pcm;
+	snd_pcm_t* pcm;
 	snd_pcm_open(&pcm, "default", SND_PCM_STREAM_PLAYBACK, 0);
 		
 	snd_pcm_hw_params_t *hw_params;
